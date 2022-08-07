@@ -1,0 +1,40 @@
+Current device is: 
+cuda:0
+
+
+The optimal values of ESN parameters:
+
+                         input lag,      m = 1
+        number of reservoir states,    n_h = 2500
+                     ridge penalty, lambda = 0.15
+    scaling matrix parameter for W,  delta = 0.9
+                      leaking rate,    phi = 1.0
+         magnitude of entries in W,    a_w = 0.05
+         magnitude of entries in U,    a_u = 0.01
+                     sparsity of W,   pi_w = 0.1
+                     sparsity of U,   pi_u = 0.01
+The total number of hours (2013-2016) considered: 35040
+
+Time for running 0_setup.py is: 4.143798805016559 
+
+ESN model trained with parameters:  [1, 2500, 0.15, 0.9, 1.0, 0.05, 0.01, 0.1, 0.01]
+Forecasting, ensemble: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 Elapased time:  0:44:58.294902
+Part of Table 3 for the MSE for y_t^* at all 3,173 knots and time points in 2016 by the ESN and persistence methods. Note that the ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+---------------------------------------------
+|     Forecast      |   ESN   | Persistence |
+---------------------------------------------
+|  One hour ahead   |  0.235  |    0.326    |
+|  Two hours ahead  |  0.394  |    0.657    |
+| Three hours ahead |  0.508  |    0.920    |
+---------------------------------------------
+
+Time for running 1.py is: 2704.770684431016 
+
+
+=======================================================
+
+In total, the running time is: 2708.9153945569997
+
+=======================================================
+

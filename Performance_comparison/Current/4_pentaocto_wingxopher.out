@@ -1,0 +1,214 @@
+Loading required package: spam
+Spam version 2.9-0 (2022-07-11) is loaded.
+Type 'help( Spam)' or 'demo( spam)' for a short introduction 
+and overview of this package.
+Help for individual functions is also obtained by adding the
+suffix '.spam' to the function name, e.g. 'help( chol.spam)'.
+
+Attaching package: ‘spam’
+
+The following objects are masked from ‘package:base’:
+
+    backsolve, forwardsolve
+
+Loading required package: viridis
+Loading required package: viridisLite
+
+Try help(fields) to get started.
+Loading required package: proxy
+
+Attaching package: ‘proxy’
+
+The following object is masked from ‘package:spam’:
+
+    as.matrix
+
+The following objects are masked from ‘package:stats’:
+
+    as.dist, dist
+
+The following object is masked from ‘package:base’:
+
+    as.matrix
+
+Loading required package: survey
+Loading required package: grid
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:spam’:
+
+    det
+
+Loading required package: survival
+
+Attaching package: ‘survey’
+
+The following object is masked from ‘package:graphics’:
+
+    dotchart
+
+Loading required package: lpSolve
+Loading required package: ggplot2
+/home/zhanx0q/1Projects/2022-2Summer/wind-GPU/Xiran/Pytorch/2_Huang_on_PyTorch/KSA-wind-forecast/src/utils.py:150: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+Current device is: 
+cuda:0
+
+
+The optimal values of ESN parameters:
+
+                         input lag,      m = 1
+        number of reservoir states,    n_h = 2500
+                     ridge penalty, lambda = 0.15
+    scaling matrix parameter for W,  delta = 0.9
+                      leaking rate,    phi = 1.0
+         magnitude of entries in W,    a_w = 0.05
+         magnitude of entries in U,    a_u = 0.01
+                     sparsity of W,   pi_w = 0.1
+                     sparsity of U,   pi_u = 0.01
+The total number of hours (2013-2016) considered: 35040
+
+Time for running 0_setup.py is: 4.539096617023461 
+
+Part of Table 3 for the MSE for y_t^* at all 3,173 knots and time points in 2016 by the ESN and persistence methods. Note that the ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+---------------------------------------------
+|     Forecast      |   ESN   | Persistence |
+---------------------------------------------
+|  One hour ahead   |  0.235  |    0.326    |
+|  Two hours ahead  |  0.394  |    0.657    |
+| Three hours ahead |  0.508  |    0.920    |
+---------------------------------------------
+
+Time for running 1.py is: 0.27111439703730866 
+
+Un: 6.750966468011029
+Deux: 132.0637683349778
+Quatre: 0.09840321401134133
+Cinq: 4.32773795502726
+Spatial interpolating at time (total: 8760): 1 101 201 301 401 501 601 701 801 901 1001 1101 1201 1301 1401 1501 1601 1701 1801 1901 2001 2101 2201 2301 2401 2501 2601 2701 2801 2901 3001 3101 3201 3301 3401 3501 3601 3701 3801 3901 4001 4101 4201 4301 4401 4501 4601 4701 4801 4901 5001 5101 5201 5301 5401 5501 5601 5701 5801 5901 6001 6101 6201 6301 6401 6501 6601 6701 6801 6901 7001 7101 7201 7301 7401 7501 7601 7701 7801 7901 8001 8101 8201 8301 8401 8501 8601 8701 
+
+Six: 3.2568695439840667 
+
+Part of Table 4 for the MSE for y_t at all 53,333 locations and time points in 2016 by the S-ESN and persistence methods. Note that the S-ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+-----------------------------------------------
+|     Forecast      |   S-ESN   | Persistence |
+-----------------------------------------------
+|  One hour ahead   |   0.276   |    0.335    |
+|  Two hours ahead  |   0.424   |    0.670    |
+| Three hours ahead |   0.537   |    0.936    |
+-----------------------------------------------
+
+Time for running 2.py is: 156.343252908031 
+
+
+Time for running 3.py is: 1.0611454299651086 
+
+The annual sum of the absolute differences in wind energy during 2016 at all the 75 wind turbines is
+      2.77E+08kW·h for S-ESN,
+      3.05E+08kW·h for ARIMA,
+  and 3.12E+08kW·h for persistence.
+Thus, we obtain a 9% improvement against the ARIMA forecasts and an 11% improvement against the persistence forecasts.
+Time for running 4.py is: 24.70340929599479 
+
+Current device is: 
+cuda:0
+
+
+ESN model trained with parameters:  [1, 2500, 0.15, 0.9, 1.0, 0.05, 0.01, 0.1, 0.01]
+Forecasting, ensemble: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 Elapased time:  0:36:41.060124
+Table 2 for the mean prediction interval coverage of y_t^* at all 3,173 knots and time points in 2016 by the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+| Prediction |         Prediction Interval Coverage          |
+|  Interval  |    1h ahead    |    2h ahead   |   3h ahead   |
+--------------------------------------------------------------
+|     95%    |   94.8%(0.5%)  |  94.6%(0.6%)  |  94.5%(0.7%) |
+--------------------------------------------------------------
+|     80%    |   80.7%(1.0%)  |  80.6%(1.1%)  |  80.6%(1.1%) |
+--------------------------------------------------------------
+|     60%    |   60.7%(1.3%)  |  60.3%(1.3%)  |  60.2%(1.5%) |
+--------------------------------------------------------------
+
+Time for running 5.py is: 2205.9038246279815 
+
+
+Time for running 6.py is: 0.048229584004729986 
+
+Un: 13.950143280031625
+Deux: 31.617533519980498
+Trois: 10.110991506022401
+Quatre: 0.0001365809584967792
+Six: 7.6723383700009435
+Six: 8.085753116989508
+Six: 7.095435063994955
+Table S2 for the mean prediction interval coverage of y_t at all 53,333 locations and time points in 2016 using the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+|     95%    |   64.3%(7.1%)  |  76.9%(5.2%)  |  84.6%(5.5%) |
+--------------------------------------------------------------
+|     80%    |   40.2%(6.3%)  |  52.8%(5.4%)  |  61.8%(6.2%) |
+--------------------------------------------------------------
+|     60%    |   25.2%(4.4%)  |  34.5%(4.2%)  |  41.6%(5.1%) |
+--------------------------------------------------------------
+
+Time for running 7.py is: 87.02051807002863 
+
+Here1
+Here1.5
+Here1.6, quantile.size = 39
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+Here2
+Here3
+Here4
+
+Time for running 8.py is: 236.64769593800884 
+
+
+=======================================================
+
+In total, the running time is: 2716.5450049749925
+
+=======================================================
+

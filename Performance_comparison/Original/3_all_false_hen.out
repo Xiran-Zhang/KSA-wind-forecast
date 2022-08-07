@@ -1,0 +1,151 @@
+Loading required package: spam
+Spam version 2.9-0 (2022-07-11) is loaded.
+Type 'help( Spam)' or 'demo( spam)' for a short introduction 
+and overview of this package.
+Help for individual functions is also obtained by adding the
+suffix '.spam' to the function name, e.g. 'help( chol.spam)'.
+
+Attaching package: ‘spam’
+
+The following objects are masked from ‘package:base’:
+
+    backsolve, forwardsolve
+
+Loading required package: viridis
+Loading required package: viridisLite
+
+Try help(fields) to get started.
+Loading required package: proxy
+
+Attaching package: ‘proxy’
+
+The following object is masked from ‘package:spam’:
+
+    as.matrix
+
+The following objects are masked from ‘package:stats’:
+
+    as.dist, dist
+
+The following object is masked from ‘package:base’:
+
+    as.matrix
+
+Loading required package: survey
+Loading required package: grid
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:spam’:
+
+    det
+
+Loading required package: survival
+
+Attaching package: ‘survey’
+
+The following object is masked from ‘package:graphics’:
+
+    dotchart
+
+Loading required package: lpSolve
+Loading required package: ggplot2
+/home/zhanx0q/wind-GPU/Huang/KSA-wind-forecast/src/utils.py:150: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+The optimal values of ESN parameters:
+
+                         input lag,      m = 1
+        number of reservoir states,    n_h = 2500
+                     ridge penalty, lambda = 0.15
+    scaling matrix parameter for W,  delta = 0.9
+                      leaking rate,    phi = 1.0
+         magnitude of entries in W,    a_w = 0.05
+         magnitude of entries in U,    a_u = 0.01
+                     sparsity of W,   pi_w = 0.1
+                     sparsity of U,   pi_u = 0.01
+The total number of hours (2013-2016) considered: 35040
+
+Time for running 0_setup.py is: 1.2003065219614655 
+
+Part of Table 3 for the MSE for y_t^* at all 3,173 knots and time points in 2016 by the ESN and persistence methods. Note that the ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+---------------------------------------------
+|     Forecast      |   ESN   | Persistence |
+---------------------------------------------
+|  One hour ahead   |  0.235  |    0.326    |
+|  Two hours ahead  |  0.394  |    0.657    |
+| Three hours ahead |  0.508  |    0.920    |
+---------------------------------------------
+
+Time for running 1.py is: 10.151324495032895 
+
+Spatial interpolating at time (total: 8760): 1 101 201 301 401 501 601 701 801 901 1001 1101 1201 1301 1401 1501 1601 1701 1801 1901 2001 2101 2201 2301 2401 2501 2601 2701 2801 2901 3001 3101 3201 3301 3401 3501 3601 3701 3801 3901 4001 4101 4201 4301 4401 4501 4601 4701 4801 4901 5001 5101 5201 5301 5401 5501 5601 5701 5801 5901 6001 6101 6201 6301 6401 6501 6601 6701 6801 6901 7001 7101 7201 7301 7401 7501 7601 7701 7801 7901 8001 8101 8201 8301 8401 8501 8601 8701 Part of Table 4 for the MSE for y_t at all 53,333 locations and time points in 2016 by the S-ESN and persistence methods. Note that the S-ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+-----------------------------------------------
+|     Forecast      |   S-ESN   | Persistence |
+-----------------------------------------------
+|  One hour ahead   |   0.276   |    0.335    |
+|  Two hours ahead  |   0.424   |    0.670    |
+| Three hours ahead |   0.537   |    0.936    |
+-----------------------------------------------
+
+Time for running 2.py is: 72.51792485802434 
+
+
+SIZE OF krig_weight is: (75, 3173) 
+
+
+SIZE OF esn_model.forMean is: (3173, 8760) 
+
+
+Time for running 3.py is: 0.34898428298765793 
+
+The annual sum of the absolute differences in wind energy during 2016 at all the 75 wind turbines is
+      2.77E+08kW·h for S-ESN,
+      3.05E+08kW·h for ARIMA,
+  and 3.12E+08kW·h for persistence.
+Thus, we obtain a 9% improvement against the ARIMA forecasts and an 11% improvement against the persistence forecasts.
+Time for running 4.py is: 23.79334574501263 
+
+Table 2 for the mean prediction interval coverage of y_t^* at all 3,173 knots and time points in 2016 by the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+| Prediction |         Prediction Interval Coverage          |
+|  Interval  |    1h ahead    |    2h ahead   |   3h ahead   |
+--------------------------------------------------------------
+|     95%    |   94.8%(0.5%)  |  94.6%(0.6%)  |  94.6%(0.7%) |
+--------------------------------------------------------------
+|     80%    |   80.7%(1.0%)  |  80.6%(1.1%)  |  80.6%(1.1%) |
+--------------------------------------------------------------
+
+Time for running 5.py is: 6.354455899971072 
+
+
+Time for running 6.py is: 0.03813743300270289 
+
+Table S2 for the mean prediction interval coverage of y_t at all 53,333 locations and time points in 2016 using the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+| Prediction |         Prediction Interval Coverage          |
+|  Interval  |    1h ahead    |    2h ahead   |   3h ahead   |
+--------------------------------------------------------------
+|     95%    |   94.6%(0.7%)  |  94.5%(0.7%)  |  94.5%(0.7%) |
+--------------------------------------------------------------
+|     80%    |   80.5%(1.1%)  |  80.6%(1.1%)  |  80.6%(1.2%) |
+--------------------------------------------------------------
+|     60%    |   60.1%(1.5%)  |  60.1%(1.4%)  |  60.0%(1.5%) |
+--------------------------------------------------------------
+
+Time for running 7.py is: 5585.234851919988 
+
+
+Time for running 8.py is: 0.5850908610154875 
+
+
+=======================================================
+
+In total, the running time is: 5700.230655869003
+
+=======================================================
+

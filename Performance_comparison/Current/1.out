@@ -1,0 +1,391 @@
+Current device is:
+cuda:0
+
+
+The optimal values of ESN parameters:
+
+                         input lag,      m = 1
+        number of reservoir states,    n_h = 2500
+                     ridge penalty, lambda = 0.15
+    scaling matrix parameter for W,  delta = 0.9
+                      leaking rate,    phi = 1.0
+         magnitude of entries in W,    a_w = 0.05
+         magnitude of entries in U,    a_u = 0.01
+                     sparsity of W,   pi_w = 0.1
+                     sparsity of U,   pi_u = 0.01
+The total number of hours (2013-2016) considered: 35040
+
+Time for running 0_setup.py is: 3.9459739709855057
+
+Part of Table 3 for the MSE for y_t^* at all 3,173 knots and time points in 2016 by the ESN and persistence methods. Note that the ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+---------------------------------------------
+|     Forecast      |   ESN   | Persistence |
+---------------------------------------------
+|  One hour ahead   |  0.243  |    0.326    |
+|  Two hours ahead  |  0.386  |    0.657    |
+| Three hours ahead |  0.488  |    0.920    |
+---------------------------------------------
+
+Time for running 1.py is: 113.02665809798054
+
+Loading required package: spam
+Spam version 2.8-0 (2022-01-05) is loaded.
+Type 'help( Spam)' or 'demo( spam)' for a short introduction
+and overview of this package.
+Help for individual functions is also obtained by adding the
+suffix '.spam' to the function name, e.g. 'help( chol.spam)'.
+
+Attaching package: ‘spam’
+
+The following objects are masked from ‘package:base’:
+
+    backsolve, forwardsolve
+
+Loading required package: viridis
+Loading required package: viridisLite
+
+Try help(fields) to get started.
+Loading required package: proxy
+
+Attaching package: ‘proxy’
+
+The following object is masked from ‘package:spam’:
+
+    as.matrix
+
+The following objects are masked from ‘package:stats’:
+
+    as.dist, dist
+
+The following object is masked from ‘package:base’:
+
+    as.matrix
+
+Loading required package: survey
+Loading required package: grid
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:spam’:
+
+    det
+
+Loading required package: survival
+
+Attaching package: ‘survey’
+
+The following object is masked from ‘package:graphics’:
+
+    dotchart
+
+Loading required package: lpSolve
+Loading required package: ggplot2
+Spatial interpolating at time (total: 8760): 1 101 201 301 401 501 601 701 801 901 1001 1101 1201 1301 1401 1501 1601 1701 1801 1901 2001 2101 2201 2301 2401 2501 2601 2701 2801 2901 3001 3101 3201 3301 3401 3501 3601 3701 3801 3901 4001 4101 4201 4301 4401 4501 4601 4701 4801 4901 5001 5101 5201 5301 5401 5501 5601 5701 5801 5901 6001 6101 6201 6301 6401 6501 6601 6701 6801 6901 7001 7101 7201 7301 7401 7501 7601 7701 7801 7901 8001 8101 8201 8301 8401 8501 8601 8701 Part of Table 4 for the MSE for y_t at all 53,333 locations and time points in 2016 by the S-ESN and persistence methods. Note that the S-ESN is a stochastic approach, so the MSE may be slightly different than the values reported in the paper.
+
+-----------------------------------------------
+|     Forecast      |   S-ESN   | Persistence |
+-----------------------------------------------
+|  One hour ahead   |   0.276   |    0.335    |
+|  Two hours ahead  |   0.424   |    0.670    |
+| Three hours ahead |   0.537   |    0.936    |
+-----------------------------------------------
+/home/zhanx0q/wind-GPU/Xiran/Pytorch/2_Huang_on_PyTorch/KSA-wind-forecast/src/utils.py:150: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+
+Time for running 2.py is: 71.3496493040002
+
+
+Time for running 3.py is: 0.3491287899960298
+
+The annual sum of the absolute differences in wind energy during 2016 at all the 75 wind turbines is
+      2.77E+08kW·h for S-ESN,
+      3.05E+08kW·h for ARIMA,
+  and 3.12E+08kW·h for persistence.
+Thus, we obtain a 9% improvement against the ARIMA forecasts and an 11% improvement against the persistence forecasts.
+Time for running 4.py is: 215.45709891201113
+
+Current device is:
+cuda:0
+
+
+3358842880
+ESN model trained with parameters:  [1, 2500, 0.15, 0.9, 1.0, 0.05, 0.01, 0.1, 0.01]
+Forecasting, ensemble: 1 False
+False
+2 False
+False
+3 False
+False
+4 False
+False
+5 False
+False
+6 False
+False
+7 False
+False
+8 False
+False
+9 False
+False
+10 False
+False
+11 False
+False
+12 False
+False
+13 False
+False
+14 False
+False
+15 False
+False
+16 False
+False
+17 False
+False
+18 False
+False
+19 False
+False
+20 False
+False
+21 False
+False
+22 False
+False
+23 False
+False
+24 False
+False
+25 False
+False
+26 False
+False
+27 False
+False
+28 False
+False
+29 False
+False
+30 False
+False
+31 False
+False
+32 False
+False
+33 False
+False
+34 False
+False
+35 False
+False
+36 False
+False
+37 False
+False
+38 False
+False
+39 False
+False
+40 False
+False
+41 False
+False
+42 False
+False
+43 False
+False
+44 False
+False
+45 False
+False
+46 False
+False
+47 False
+False
+48 False
+False
+49 False
+False
+50 False
+False
+51 False
+False
+52 False
+False
+53 False
+False
+54 False
+False
+55 False
+False
+56 False
+False
+57 False
+False
+58 False
+False
+59 False
+False
+60 False
+False
+61 False
+False
+62 False
+False
+63 False
+False
+64 False
+False
+65 False
+False
+66 False
+False
+67 False
+False
+68 False
+False
+69 False
+False
+70 False
+False
+71 False
+False
+72 False
+False
+73 False
+False
+74 False
+False
+75 False
+False
+76 False
+False
+77 False
+False
+78 False
+False
+79 False
+False
+80 False
+False
+81 False
+False
+82 False
+False
+83 False
+False
+84 False
+False
+85 False
+False
+86 False
+False
+87 False
+False
+88 False
+False
+89 False
+False
+90 False
+False
+91 False
+False
+92 False
+False
+93 False
+False
+94 False
+False
+95 False
+False
+96 False
+False
+97 False
+False
+98 False
+False
+99 False
+False
+100 False
+False
+Elapased time:  0:20:51.271595
+Here13
+
+Here14
+
+Here15
+
+Here16
+
+Here17
+
+Here18
+
+<class 'torch.Tensor'>
+True
+True
+<class 'torch.Tensor'>
+True
+True
+<class 'torch.Tensor'>
+True
+True
+Table 2 for the mean prediction interval coverage of y_t^* at all 3,173 knots and time points in 2016 by the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+| Prediction |         Prediction Interval Coverage          |
+|  Interval  |    1h ahead    |    2h ahead   |   3h ahead   |
+--------------------------------------------------------------
+|     95%    |   94.7%(0.6%)  |  94.5%(0.7%)  |  94.5%(0.7%) |
+--------------------------------------------------------------
+|     80%    |   80.8%(1.1%)  |  80.8%(1.1%)  |  80.8%(1.2%) |
+--------------------------------------------------------------
+|     60%    |   60.5%(1.4%)  |  60.3%(1.5%)  |  60.2%(1.5%) |
+--------------------------------------------------------------
+
+Time for running 5.py is: 1256.048312208004
+
+
+Time for running 6.py is: 0.043760982021922246
+
+Here7.1
+Here7.2
+torch.Size([53333, 3173])
+torch.Size([8760, 3173, 3])
+Heremm
+Here33
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+<class 'torch.Tensor'>
+Here34
+Table S2 for the mean prediction interval coverage of y_t at all 53,333 locations and time points in 2016 using the ESN (standard deviation across knots is shown in parentheses). Note that the ESN is a stochastic approach, so the values may be slightly different than the values reported in the paper.
+
+--------------------------------------------------------------
+|     95%    |   64.7%(7.1%)  |  77.3%(5.2%)  |  84.8%(5.5%) |
+--------------------------------------------------------------
+|     80%    |   40.6%(6.3%)  |  53.2%(5.4%)  |  62.1%(6.2%) |
+--------------------------------------------------------------
+|     60%    |   25.4%(4.4%)  |  34.8%(4.2%)  |  41.8%(5.1%) |
+--------------------------------------------------------------
+
+Time for running 7.py is: 86.81663568099611
+
+
+Time for running 8.py is: 0.6224377399776131
+
+
+=======================================================
+
+In total, the running time is: 1747.6673865519988
+
+=======================================================
