@@ -28,7 +28,10 @@ if rerun:
     # Original
     # esn_power_turbine_height_quantile   = np.zeros_like(esn_wind_speed_turbine_location_quantile)
     print("Here1.6, quantile.size =", quantile.size)
-    # Slow
+    # Slow 1
+    esn_wind_speed_turbine_location_quantile = esn_wind_speed_turbine_location_quantile.cpu().numpy()
+    esn_power_turbine_height_quantile = esn_power_turbine_height_quantile.cpu().numpy()
+    # END Slow 1
     for i in range(quantile.size):
         print(i)
         for loc in range(75):
@@ -36,9 +39,13 @@ if rerun:
                 tmp = esn_wind_speed_turbine_location_quantile[i,time,loc] * \
                     (turbine_height[loc]/10)**alpha_turbine_location[loc,time%24]
                 esn_power_turbine_height_quantile[i,time,loc] = get_power_curve(turbine_type[loc],tmp)
+    # Slow 2
+    esn_power_turbine_height_quantile = torch.from_numpy(esn_power_turbine_height_quantile).to(device)
+    # END Slow 2
     print("Here2")
     # PYTORCH 8.5
-    esn_total_power_turbine_height_quantile_diff = torch.nansum(torch.abs(esn_power_turbine_height_quantile - true_power_turbine_height.T), axis = (1,2))
+    true_power_turbine_height = torch.from_numpy(true_power_turbine_height).to(device)
+    esn_total_power_turbine_height_quantile_diff = torch.nansum(torch.abs(esn_power_turbine_height_quantile - true_power_turbine_height.T), axis = (1,2)).cpu()
     print("Here3")
     # Original
     # esn_total_power_turbine_height_quantile_diff = np.nansum(np.abs(esn_power_turbine_height_quantile - true_power_turbine_height.T), axis = (1,2))
